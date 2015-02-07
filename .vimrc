@@ -1,0 +1,1 @@
+/home/whage/.vimrc
