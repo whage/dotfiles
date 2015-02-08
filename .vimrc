@@ -1,1 +1,1 @@
-/home/whage/.vimrc
+colo pablo
