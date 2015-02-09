@@ -40,31 +40,15 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
 # load nice git-related functions (code-worrier.com/blog/git-branch-in-bash-prompt/)
 source ~/.git-prompt.sh
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;251m\]@\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[91m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;251m\]@\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[91m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
+
+# you are root, make the prompt red
+if [ $(id -u) -eq 0 ]; then 
+    PS1="⚡ ${PS1}"
 fi
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -86,15 +70,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -119,9 +94,6 @@ fi
 # add ~/bin to PATH
 PATH=$PATH:$HOME/bin
 export PATH
-
-alias webroot="cd /media/whage/New\ System/www"
-alias uwebroot="cd /var/www"
 
 # adjust output width in terminal
 COLUMNS=100
