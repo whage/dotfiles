@@ -60,7 +60,7 @@ fi
 source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;192m\]\u\[\e[0m\]\[\e[38;5;209m\] @ \[\e[0m\]\[\e[38;5;190m\]\h\[\e[0m\]\[\e[38;5;209m\]: \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[91m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;190m\]\$\[\e[0m\] '
+    PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;251m\]@\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[91m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# add ~/bin to PATH
 PATH=$PATH:$HOME/bin
 export PATH
 
