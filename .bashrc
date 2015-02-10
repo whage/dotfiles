@@ -43,9 +43,9 @@ esac
 # load nice git-related functions (code-worrier.com/blog/git-branch-in-bash-prompt/)
 source ~/.git-prompt.sh
 
-PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;251m\]@\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[91m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
+PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;251m\]@\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[38;5;221m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
 
-# you are root, make the prompt red
+# you are root, add high voltage sign
 if [ $(id -u) -eq 0 ]; then 
     PS1="⚡ ${PS1}"
 fi
