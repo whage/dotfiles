@@ -1,0 +1,13 @@
+[diff]
+	tool = meld
+
+[merge]
+	tool = meld
+
+[user]
+	email = whage@freemail.hu
+	name = whage
+
+[alias]
+	ll = log --graph --stat
+	ls = log --pretty="%C(yellow)%h%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate
