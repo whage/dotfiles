@@ -1,3 +1,5 @@
+# global .gitconfig file. should be placed in ~/
+
 [diff]
 	tool = meld
 
