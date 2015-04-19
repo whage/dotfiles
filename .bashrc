@@ -91,8 +91,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# add ~/bin to PATH
-PATH=$PATH:$HOME/bin
+# add ~/bin and ~/.cabal/bin to PATH
+PATH=$PATH:$HOME/bin:$HOME/.cabal/bin
 export PATH
 
 # adjust output width in terminal
