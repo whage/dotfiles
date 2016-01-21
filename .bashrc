@@ -43,7 +43,13 @@ esac
 # load nice git-related functions (code-worrier.com/blog/git-branch-in-bash-prompt/)
 source ~/.git-prompt.sh
 
-PS1='\[\e[38;5;11m\]\t\[\e[0m\] ${debian_chroot:+($debian_chroot)}\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[38;5;221m\]$(__git_ps1)\[\e[0m\]\n\[\e[38;5;11m\]>\[\e[0m\] '
+PS1='${debian_chroot:+($debian_chroot)}\
+\[\033[38;5;214m\]\u\[$(tput sgr0)\]\
+\[\033[38;5;73m\]|\[$(tput sgr0)\]\
+\[\033[38;5;166m\]\h\[$(tput sgr0)\]\
+ \[\033[38;5;228m\]\w\[$(tput sgr0)\]\
+\[\033[38;5;73m\]$(__git_ps1)\[$(tput sgr0)\]
+> '
 
 # you are root, add high voltage sign
 if [ $(id -u) -eq 0 ]; then 
