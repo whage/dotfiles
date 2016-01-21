@@ -43,7 +43,7 @@ esac
 # load nice git-related functions (code-worrier.com/blog/git-branch-in-bash-prompt/)
 source ~/.git-prompt.sh
 
-PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[38;5;221m\]$(__git_ps1)\[\e[0m\] \[\e[38;5;11m\]\$\[\e[0m\] '
+PS1='\[\e[38;5;11m\]\t\[\e[0m\] ${debian_chroot:+($debian_chroot)}\[\e[38;5;74m\]\u\[\e[0m\]\[\e[38;5;202m\][\[\e[0m\]\[\e[38;5;11m\]\h\[\e[0m\]\[\e[38;5;74m\]\[\e[38;5;202m\]]\[\e[0m\] \[\e[0m\]\[\e[38;5;146m\]\w\[\e[0m\]\[\e[38;5;221m\]$(__git_ps1)\[\e[0m\]\n\[\e[38;5;11m\]>\[\e[0m\] '
 
 # you are root, add high voltage sign
 if [ $(id -u) -eq 0 ]; then 
@@ -97,3 +97,11 @@ export PATH
 
 # adjust output width in terminal
 COLUMNS=100
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export GPGKEY=B0DCB8CD
+
+[ -s "/home/whage/.scm_breeze/scm_breeze.sh" ] && source "/home/whage/.scm_breeze/scm_breeze.sh"
