@@ -44,12 +44,13 @@ esac
 source ~/.git-prompt.sh
 
 PS1='${debian_chroot:+($debian_chroot)}\
+\[\033[38;5;73m\]\A\[$(tput sgr0)\] \
 \[\033[38;5;214m\]\u\[$(tput sgr0)\]\
 \[\033[38;5;73m\]|\[$(tput sgr0)\]\
-\[\033[38;5;166m\]\h\[$(tput sgr0)\]\
- \[\033[38;5;228m\]\w\[$(tput sgr0)\]\
+\[\033[38;5;166m\]\h\[$(tput sgr0)\] \
+\[\033[38;5;228m\]\w\[$(tput sgr0)\]\
 \[\033[38;5;73m\]$(__git_ps1)\[$(tput sgr0)\]
-> '
+λ '
 
 # you are root, add high voltage sign
 if [ $(id -u) -eq 0 ]; then 
