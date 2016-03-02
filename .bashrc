@@ -40,11 +40,7 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# load nice git-related functions (code-worrier.com/blog/git-branch-in-bash-prompt/)
-source ~/.git-prompt.sh
-
 PS1='${debian_chroot:+($debian_chroot)}\
-\[\033[38;5;73m\]\A\[$(tput sgr0)\] \
 \[\033[38;5;214m\]\u\[$(tput sgr0)\]\
 \[\033[38;5;73m\]|\[$(tput sgr0)\]\
 \[\033[38;5;166m\]\h\[$(tput sgr0)\] \
@@ -112,3 +108,5 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export GPGKEY=B0DCB8CD
 
 [ -s "/home/whage/.scm_breeze/scm_breeze.sh" ] && source "/home/whage/.scm_breeze/scm_breeze.sh"
+
+[ -s "/home/asallai/.scm_breeze/scm_breeze.sh" ] && source "/home/asallai/.scm_breeze/scm_breeze.sh"
